@@ -5,7 +5,7 @@
 nbproject/private/
 build/
 nbbuild/
-nbdist/*
+nbdist/
 .nb-gradle/
 nbactions.xml
 
