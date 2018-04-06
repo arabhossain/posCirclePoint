@@ -1,0 +1,8 @@
+<#if licenseFirst??>
+${licenseFirst}
+</#if>
+${licensePrefix}Developer: Arab Hossain
+${licensePrefix}Email: green.arab1995@gmail.com
+<#if licenseLast??>
+${licenseLast}
+</#if>
