@@ -30,21 +30,35 @@ public class Load extends Application {
     @Override
     public void start(Stage Pstage) throws Exception {
        
-        stage=Pstage;
-        root = FXMLLoader.load(getClass().getResource("/View/"+url));
-        scene = new Scene(root);
-        Config.setTitle(title);
-        stage.setScene(scene);
-        stage.setResizable(false);
-        stage.initStyle(StageStyle.UNDECORATED);
-        if(title.equals("Login")){
-            stage.getIcons().add(ImageLoad.img_dir("login.png"));
-            stage.setMaximized(false);
+        if(Config.isConfigured()){
+            stage=Pstage;
+            root = FXMLLoader.load(getClass().getResource("/View/"+url));
+            scene = new Scene(root);
+            Config.setTitle(title);
+            stage.setScene(scene);
+            stage.setResizable(false);
+            stage.initStyle(StageStyle.UNDECORATED);
+            if(title.equals("Login")){
+                stage.getIcons().add(ImageLoad.img_dir("login.png"));
+                stage.setMaximized(false);
+            }else{
+                stage.getIcons().add(ImageLoad.img_dir("sale_new.png"));
+                stage.setMaximized(true);
+            }
+            stage.show();
         }else{
-            stage.getIcons().add(ImageLoad.img_dir("sale_new.png"));
-            stage.setMaximized(true);
+            stage=Pstage;
+            root = FXMLLoader.load(getClass().getResource("/Install/install.fxml"));
+            scene = new Scene(root);
+            Config.setTitle("Install AmrCircle POS");
+            stage.setScene(scene);
+            stage.setResizable(false);
+           // stage.getIcons().add(ImageLoad.img_dir("login.png"));
+           // stage.initStyle(StageStyle.UNDECORATED);
+           
+            stage.show();
         }
-        stage.show();
+       
     }
 
     /**

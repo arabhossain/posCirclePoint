@@ -18,6 +18,8 @@ import javafx.stage.FileChooser;
  */
 public class Config {
     
+    
+    
      public void addFXML(AnchorPane PaneName,String fileName){
       PaneName.getChildren().clear();
         try {
@@ -32,5 +34,7 @@ public class Config {
         public static void setTitle(String title){
          stage.setTitle(title+" || "+AppVars.APP_VERSION);
         }
-    
+     public static boolean isConfigured(){
+        return false;
+    }
 }
