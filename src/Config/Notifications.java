@@ -21,6 +21,25 @@ public class Notifications extends NType{
        NotificationType nt=NotificationType.SUCCESS;
        TryNotifications(title,message,nt);
     }
+    public static void error(String title,String message){
+       NotificationType nt=NotificationType.ERROR;
+       TryNotifications(title,message,nt);
+    }
+    public static void information(String title,String message){
+       NotificationType nt=NotificationType.INFORMATION;
+       TryNotifications(title,message,nt);
+    }
+    public static void notice(String title,String message){
+       NotificationType nt=NotificationType.NOTICE;
+       TryNotifications(title,message,nt);
+    }
+    public static void warning(String title,String message){
+       NotificationType nt=NotificationType.WARNING;
+       TryNotifications(title,message,nt);
+    }
+    public static void withAppLogo(String title,String message){
+       withlogo(title,message);
+    }
 }
 
 class NType{
@@ -34,6 +53,17 @@ class NType{
        tray.setAnimationType(AnimationType.FADE);
        tray.setNotificationType(notification);
        //tray.setImage(appLogo);
+       tray.showAndDismiss(Duration.seconds(5));
+    }
+     protected static void withlogo(String title, String message){
+       Image appLogo = ImageLoad.img_dir("app");
+  
+       TrayNotification tray = new TrayNotification();
+       tray.setTitle(title);
+       tray.setMessage(message);
+       tray.setRectangleFill(Paint.valueOf("#2A9A84"));
+       tray.setAnimationType(AnimationType.FADE);
+       tray.setImage(appLogo);
        tray.showAndDismiss(Duration.seconds(5));
     }    
 }

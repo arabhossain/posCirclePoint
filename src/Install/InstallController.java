@@ -55,7 +55,7 @@ public class InstallController {
 
     @FXML
     void btn_next(ActionEvent event) {
-       Notifications.success("Success","test");
+       Notifications.warning("Success","test");
     }
 
     @FXML
