@@ -5,3 +5,7 @@
 .mainFxmlClass {
    
 }
+JFXButton{
+    -fx-background-color:bisque;
+    -fx-cursor:hand;
+}

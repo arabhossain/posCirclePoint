@@ -31,9 +31,9 @@ public class Config {
         }
     }
      
-        public static void setTitle(String title){
-         stage.setTitle(title+" || "+AppVars.APP_VERSION);
-        }
+    public static void setTitle(String title){
+        stage.setTitle(title+" || "+AppVars.APP_VERSION);
+    }
      public static boolean isConfigured(){
         return false;
     }

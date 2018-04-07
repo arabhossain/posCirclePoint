@@ -29,9 +29,8 @@ public class Load extends Application {
     
     @Override
     public void start(Stage Pstage) throws Exception {
-       
+       stage=Pstage;
         if(Config.isConfigured()){
-            stage=Pstage;
             root = FXMLLoader.load(getClass().getResource("/View/"+url));
             scene = new Scene(root);
             Config.setTitle(title);
@@ -47,15 +46,11 @@ public class Load extends Application {
             }
             stage.show();
         }else{
-            stage=Pstage;
             root = FXMLLoader.load(getClass().getResource("/Install/install.fxml"));
             scene = new Scene(root);
             Config.setTitle("Install AmrCircle POS");
             stage.setScene(scene);
-            stage.setResizable(false);
-           // stage.getIcons().add(ImageLoad.img_dir("login.png"));
-           // stage.initStyle(StageStyle.UNDECORATED);
-           
+            stage.setResizable(false);          
             stage.show();
         }
        
