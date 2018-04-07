@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Cloud_Database>
+    <Driver Connection="MySql">
+        <CloudIP>o1ml4px2cz0bo1ms7il4ph8tg9u</CloudIP>
+        <CloudPort>cx6cx6jp9ft3</CloudPort>
+        <DB_Name>n2nz0bh8tf0vn2n</DB_Name>
+        <DB_User>i7sl4pl4pg9u</DB_User>
+        <DB_Password/>
+    </Driver>
+</Cloud_Database>
