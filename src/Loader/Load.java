@@ -32,8 +32,8 @@ public class Load extends Application {
     
     
     @Override
-    public void start(Stage Pstage) {
-  
+    public void start(Stage Pstage) throws IOException {
+    sceanLoad(Pstage);
         Task task = new Task<Integer>() {
             @Override protected Integer call() throws Exception {
                 Utility.MySqlControlPanel.MySqlStart();
@@ -42,11 +42,6 @@ public class Load extends Application {
 
             @Override protected void succeeded() {
                 super.succeeded();
-                try {
-                    sceanLoad(Pstage);
-                } catch (IOException ex) {
-                    Logger.getLogger(Load.class.getName()).log(Level.SEVERE, null, ex);
-                }
                 updateMessage("Done!");
             }
 

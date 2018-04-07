@@ -31,7 +31,7 @@ public class AppVars {
     private static String ShopName;
     private static int BranchID;
     private static String MoneySymble;
-    public static String XmappRootFolderURL="d:xampp";
+    public static String XmappRootFolderURL;
     
 //    public final static javafx.scene.image.Image noImage=ImageLoad.img_dir("nophoto.png");
     //File IO Service packages variables

@@ -4,15 +4,23 @@
  */
 package Install;
 
+import Config.AppVars;
 import Config.Notify;
+import Config.ThisPC;
+import FileIO.FindFile;
+import Utility.Validations;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 
 
-public class InstallController {
-
+public class InstallController implements Initializable {
+    @FXML
+    private JFXTextField txt_xammRoot;
     @FXML
     private JFXTextField txt_LHost;
 
@@ -51,12 +59,47 @@ public class InstallController {
 
     @FXML
     void btn_next(ActionEvent event) {
-        Notify.success("Success","test");
+         setValues();
+         FindFile ff=new FindFile();
+         if(ff.editLocalXML()){
+             Notify.success("Configured Successfully", "Local Database Configuration Updated");
+         }else Notify.error("Error", "Error Updating XML Configured File");
     }
 
     @FXML
     void btn_test(ActionEvent event) {
         Notify.error("Success","test");
+    }
+
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        this.txt_xammRoot.setText(AppVars.XmappRootFolderURL);
+        this.txt_LHost.setText(AppVars.getDB_Url());
+        this.txt_LDtabase.setText(AppVars.getDbName());
+        this.txt_LUsers.setText(AppVars.getDbUser());
+        this.txt_LPassword.setText(AppVars.getDbPass());
+        
+        this.txt_CHost.setText(AppVars.getCloudIP());
+        this.txt_CPort.setText(AppVars.getCloudPort());
+        this.txt_CDtabase.setText(AppVars.getCloudDatabaseName());
+        this.txt_CUsers.setText(AppVars.getCloudUser());
+        this.txt_CPassword.setText(AppVars.getCloudPass());
+        
+        this.txt_ip.setText(ThisPC.getIP());
+    }
+    
+    private void setValues(){
+       Validations.validate_textField(this.txt_xammRoot);
+       Validations.validate_textField(this.txt_LHost);
+       Validations.validate_textField(this.txt_LDtabase);
+       Validations.validate_textField(this.txt_LUsers);
+       Validations.validate_textField(this.txt_LPassword);
+
+       AppVars.XmappRootFolderURL=this.txt_xammRoot.getText();
+       AppVars.setDB_Url(this.txt_LHost.getText());
+       AppVars.setDbName(this.txt_LDtabase.getText());
+       AppVars.setDbUser(this.txt_LUsers.getText());
+       AppVars.setDbPass(this.txt_LPassword.getText());
     }
 
 }

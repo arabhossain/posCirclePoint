@@ -29,7 +29,7 @@
             </Lighting>
          </effect>
       </Label>
-      <JFXTextField fx:id="txt_LHost" labelFloat="true" layoutX="65.0" layoutY="202.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter IP/Host">
+      <JFXTextField fx:id="txt_LHost" labelFloat="true" layoutX="65.0" layoutY="239.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter IP/Host">
          <font>
             <Font size="15.0" />
          </font>
@@ -43,7 +43,7 @@
             </LinearGradient>
          </unFocusColor></JFXTextField>
       <Separator layoutX="202.0" layoutY="104.0" prefHeight="0.0" prefWidth="643.0" />
-      <JFXTextField fx:id="txt_LPort" labelFloat="true" layoutX="65.0" layoutY="259.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Port">
+      <JFXTextField fx:id="txt_LPort" labelFloat="true" layoutX="65.0" layoutY="294.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Port">
          <font>
             <Font size="15.0" />
          </font>
@@ -57,7 +57,7 @@
             </LinearGradient>
          </unFocusColor>
       </JFXTextField>
-      <JFXTextField fx:id="txt_LDtabase" labelFloat="true" layoutX="65.0" layoutY="305.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Database Name">
+      <JFXTextField fx:id="txt_LDtabase" labelFloat="true" layoutX="65.0" layoutY="351.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Database Name">
          <font>
             <Font size="15.0" />
          </font>
@@ -71,7 +71,7 @@
             </LinearGradient>
          </unFocusColor>
       </JFXTextField>
-      <JFXTextField fx:id="txt_LUsers" labelFloat="true" layoutX="65.0" layoutY="353.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Database Username">
+      <JFXTextField fx:id="txt_LUsers" labelFloat="true" layoutX="65.0" layoutY="414.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Database Username">
          <font>
             <Font size="15.0" />
          </font>
@@ -85,7 +85,7 @@
             </LinearGradient>
          </unFocusColor>
       </JFXTextField>
-      <JFXTextField fx:id="txt_LPassword" labelFloat="true" layoutX="65.0" layoutY="404.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Database Password">
+      <JFXTextField fx:id="txt_LPassword" labelFloat="true" layoutX="65.0" layoutY="464.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Database Password">
          <font>
             <Font size="15.0" />
          </font>
@@ -99,7 +99,7 @@
             </LinearGradient>
          </unFocusColor>
       </JFXTextField>
-      <JFXTextArea fx:id="txt_license" labelFloat="true" layoutX="66.0" layoutY="466.0" prefHeight="83.0" prefWidth="872.0" promptText="License">
+      <JFXTextArea fx:id="txt_license" labelFloat="true" layoutX="66.0" layoutY="527.0" prefHeight="45.0" prefWidth="879.0" promptText="License">
          <font>
             <Font size="15.0" />
          </font>
@@ -119,7 +119,7 @@
             </LinearGradient>
          </unFocusColor>
       </JFXTextField>
-      <JFXTextField fx:id="txt_CPort" labelFloat="true" layoutX="585.0" layoutY="259.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Port">
+      <JFXTextField fx:id="txt_CPort" labelFloat="true" layoutX="585.0" layoutY="250.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Port">
          <font>
             <Font size="15.0" />
          </font>
@@ -175,7 +175,7 @@
             </LinearGradient>
          </unFocusColor>
       </JFXTextField>
-      <Label layoutX="60.0" layoutY="139.0" text="Local Database Configuration" textFill="#eeecec">
+      <Label layoutX="72.0" layoutY="120.0" text="Local Database Configuration" textFill="#eeecec">
          <font>
             <Font size="20.0" />
          </font>
@@ -185,17 +185,31 @@
             <Font size="20.0" />
          </font>
       </Label>
-      <Label layoutX="60.0" layoutY="592.0" text="Your Computer IP" textFill="#eeecec" />
-      <JFXTextField fx:id="txt_ip" editable="false" layoutX="172.0" layoutY="588.0" prefHeight="25.0" prefWidth="259.0" />
-      <JFXButton layoutX="539.0" layoutY="587.0" onAction="#btn_test" prefHeight="53.0" prefWidth="245.0" style="-fx-background-color: orange;" text="Test Connection">
+      <Label layoutX="60.0" layoutY="603.0" text="Your Computer IP" textFill="#eeecec" />
+      <JFXTextField fx:id="txt_ip" editable="false" layoutX="172.0" layoutY="599.0" prefHeight="25.0" prefWidth="259.0" />
+      <JFXButton layoutX="538.0" layoutY="598.0" onAction="#btn_test" prefHeight="53.0" prefWidth="245.0" style="-fx-background-color: orange;" text="Test Connection">
          <font>
             <Font size="20.0" />
          </font>
       </JFXButton>
-      <JFXButton layoutX="817.0" layoutY="587.0" onAction="#btn_next" prefHeight="53.0" prefWidth="121.0" style="-fx-background-color: orange;" text="Next">
+      <JFXButton layoutX="824.0" layoutY="598.0" onAction="#btn_next" prefHeight="53.0" prefWidth="121.0" style="-fx-background-color: orange;" text="Next">
          <font>
             <Font size="20.0" />
          </font>
       </JFXButton>
+      <JFXTextField fx:id="txt_xammRoot" labelFloat="true" layoutX="65.0" layoutY="178.0" prefHeight="25.0" prefWidth="357.0" promptText="Enter Xampp Root. ie. c:xampp">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <unFocusColor>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop color="BLACK" />
+                  <Stop color="BLACK" offset="0.5478927203065134" />
+                  <Stop color="WHITE" offset="1.0" />
+               </stops>
+            </LinearGradient>
+         </unFocusColor>
+      </JFXTextField>
    </children>
 </AnchorPane>

@@ -1,15 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<Local_Database>
-    <Driver Connection="MySql">
-        <xamppRoot></xamppRoot>
-        <JDBC_DRIVER>x2cl4pn2n8.2n2nb4zh8tj6ro1m8.2q9kw3ey1cx2c8.28D2i7sr8je1wv4fi7s</JDBC_DRIVER>
-        <DB_URL>q9kw3ey1cx2c8:2n2nb4zh8tj6ro1m8:28/28/2o1ml4px2cz0bo1ms7il4ph8tg9u8/2</DB_URL>
-        <DB_Name>i7sv4fg9uz0br8jo1mh8tb4zh8tg9uv4fn2n</DB_Name>
-        <DB_User/>
-        <DB_Password/>
-    </Driver>
-    <Branch Area="Local">
-        <Shop_Name>z0bn2nz0bi7s8 2h8ts7il4pk5q</Shop_Name>
-        <BranchId>az8</BranchId>
-    </Branch>
-</Local_Database>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><Local_Database><Driver Connection="MySql"><xamppRoot>w3e8:2c3yz0bn2nk5qk5q</xamppRoot><JDBC_DRIVER>x2cl4pn2n8.2n2nb4zh8tj6ro1m8.2q9kw3ey1cx2c8.28D2i7sr8je1wv4fi7s</JDBC_DRIVER><DB_URL>q9kw3ey1cx2c8:2n2nb4zh8tj6ro1m8:28/28/2o1ml4px2cz0bo1ms7il4ph8tg9u8/2</DB_URL><DB_Name>i7sv4fg9uz0br8jo1mh8tb4zh8tg9uv4fn2n</DB_Name><DB_User>i7sl4pl4pg9u</DB_User><DB_Password/></Driver><Branch Area="Local"><Shop_Name>z0bn2nz0bi7s8 2h8ts7il4pk5q</Shop_Name><BranchId>az8</BranchId></Branch></Local_Database>
