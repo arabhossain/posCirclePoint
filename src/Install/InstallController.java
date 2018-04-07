@@ -4,23 +4,58 @@
  */
 package Install;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-import javafx.fxml.Initializable;
+import com.jfoenix.controls.JFXTextArea;
+import com.jfoenix.controls.JFXTextField;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 
-/**
- * FXML Controller class
- *
- * @author emonh
- */
-public class InstallController implements Initializable {
+public class InstallController {
 
-    /**
-     * Initializes the controller class.
-     */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+    @FXML
+    private JFXTextField txt_LHost;
+
+    @FXML
+    private JFXTextField txt_LPort;
+
+    @FXML
+    private JFXTextField txt_LDtabase;
+
+    @FXML
+    private JFXTextField txt_LUsers;
+
+    @FXML
+    private JFXTextField txt_LPassword;
+
+    @FXML
+    private JFXTextArea txt_license;
+
+    @FXML
+    private JFXTextField txt_CHost;
+
+    @FXML
+    private JFXTextField txt_CPort;
+
+    @FXML
+    private JFXTextField txt_CDtabase;
+
+    @FXML
+    private JFXTextField txt_CUsers;
+
+    @FXML
+    private JFXTextField txt_CPassword;
+
+    @FXML
+    private JFXTextField txt_ip;
+
+    @FXML
+    void btn_next(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btn_test(ActionEvent event) {
+
+    }
+
 }
+
