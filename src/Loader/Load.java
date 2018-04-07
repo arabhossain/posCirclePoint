@@ -6,7 +6,11 @@ package Loader;
 
 import Config.Config;
 import Config.ImageLoad;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.application.Application;
+import javafx.concurrent.Task;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -28,8 +32,46 @@ public class Load extends Application {
     
     
     @Override
-    public void start(Stage Pstage) throws Exception {
-       stage=Pstage;
+    public void start(Stage Pstage) {
+  
+        Task task = new Task<Integer>() {
+            @Override protected Integer call() throws Exception {
+                Utility.MySqlControlPanel.MySqlStart();
+                return 0;
+            }
+
+            @Override protected void succeeded() {
+                super.succeeded();
+                try {
+                    sceanLoad(Pstage);
+                } catch (IOException ex) {
+                    Logger.getLogger(Load.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                updateMessage("Done!");
+            }
+
+            @Override protected void cancelled() {
+                super.cancelled();
+                updateMessage("Cancelled!");
+            }
+
+            @Override protected void failed() {
+                super.failed();
+                updateMessage("Failed!");
+            }
+        };
+        Thread t=new Thread(task);
+        t.start();
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+    private void sceanLoad(Stage pstage) throws IOException {
+        stage=pstage;
         if(Config.isConfigured()){
             root = FXMLLoader.load(getClass().getResource("/View/"+url));
             scene = new Scene(root);
@@ -53,14 +95,5 @@ public class Load extends Application {
             stage.setResizable(false);          
             stage.show();
         }
-       
     }
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-    
 }

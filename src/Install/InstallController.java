@@ -4,16 +4,12 @@
  */
 package Install;
 
-import Config.Notifications;
+import Config.Notify;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.image.Image;
-import javafx.scene.paint.Paint;
-import javafx.util.Duration;
-import tray.animations.AnimationType;
-import tray.notification.TrayNotification;
+
 
 public class InstallController {
 
@@ -55,12 +51,12 @@ public class InstallController {
 
     @FXML
     void btn_next(ActionEvent event) {
-       Notifications.warning("Success","test");
+        Notify.success("Success","test");
     }
 
     @FXML
     void btn_test(ActionEvent event) {
-
+        Notify.error("Success","test");
     }
 
 }

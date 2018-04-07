@@ -5,12 +5,12 @@
 package Config;
 
 
+import FileIO.FindFile;
 import static Loader.Load.stage;
 import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.layout.AnchorPane;
-import javafx.stage.FileChooser;
 
 /**
  *
@@ -35,6 +35,11 @@ public class Config {
         stage.setTitle(title+" || "+AppVars.APP_VERSION);
     }
      public static boolean isConfigured(){
-        return false;
+        boolean isConfigured=false;
+        FindFile ff=new FindFile();
+        if(ff.lookUpConfig()){
+            
+        }
+        return isConfigured;
     }
 }
