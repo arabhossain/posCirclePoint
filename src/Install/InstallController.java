@@ -4,6 +4,7 @@
  */
 package Install;
 
+import Config.Notifications;
 import com.jfoenix.controls.JFXTextArea;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -54,15 +55,7 @@ public class InstallController {
 
     @FXML
     void btn_next(ActionEvent event) {
-        Image whatsAppImg = new Image("https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/whatsapp-128.png");
-
-        TrayNotification tray = new TrayNotification();
-        tray.setTitle("New WhatsApp Message");
-        tray.setMessage("Github - I like your new notification release. Nice one.");
-        tray.setRectangleFill(Paint.valueOf("#2A9A84"));
-        tray.setAnimationType(AnimationType.FADE);
-        tray.setImage(whatsAppImg);
-        tray.showAndDismiss(Duration.seconds(5));
+       Notifications.success("Success","test");
     }
 
     @FXML
