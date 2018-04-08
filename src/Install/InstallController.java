@@ -5,6 +5,7 @@
 package Install;
 
 import Config.AppVars;
+import Config.Database;
 import Config.Notify;
 import Config.ThisPC;
 import FileIO.FindFile;
@@ -24,8 +25,7 @@ public class InstallController implements Initializable {
     @FXML
     private JFXTextField txt_LHost;
 
-    @FXML
-    private JFXTextField txt_LPort;
+ 
 
     @FXML
     private JFXTextField txt_LDtabase;
@@ -62,17 +62,47 @@ public class InstallController implements Initializable {
          setValues();
          FindFile ff=new FindFile();
          if(ff.editLocalXML()){
+             ff.lookUpConfig();
              Notify.success("Configured Successfully", "Local Database Configuration Updated");
+             if(testConnection()){
+                 Notify.information("Notification", "will do start from here from the next day :D ");
+             }
          }else Notify.error("Error", "Error Updating XML Configured File");
     }
 
     @FXML
     void btn_test(ActionEvent event) {
-        Notify.error("Success","test");
+      testConnection();
     }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        readValues();
+    }
+    private boolean testConnection(){
+         if(Database.connect()==null){
+           Notify.error("Error", "Database Can't connect");
+           return false;
+       }else{
+           Notify.success("Success", "Connection stablished");
+           return true;
+       }
+    }
+    private void setValues(){
+       Validations.validate_textField(this.txt_xammRoot);
+       Validations.validate_textField(this.txt_LHost);
+       Validations.validate_textField(this.txt_LDtabase);
+       Validations.validate_textField(this.txt_LUsers);
+      
+
+       AppVars.XmappRootFolderURL=this.txt_xammRoot.getText();
+       AppVars.setDB_Url(this.txt_LHost.getText());
+       AppVars.setDbName(this.txt_LDtabase.getText());
+       AppVars.setDbUser(this.txt_LUsers.getText());
+       AppVars.setDbPass(this.txt_LPassword.getText());
+    }
+    private void readValues(){
+        
         this.txt_xammRoot.setText(AppVars.XmappRootFolderURL);
         this.txt_LHost.setText(AppVars.getDB_Url());
         this.txt_LDtabase.setText(AppVars.getDbName());
@@ -86,20 +116,6 @@ public class InstallController implements Initializable {
         this.txt_CPassword.setText(AppVars.getCloudPass());
         
         this.txt_ip.setText(ThisPC.getIP());
-    }
-    
-    private void setValues(){
-       Validations.validate_textField(this.txt_xammRoot);
-       Validations.validate_textField(this.txt_LHost);
-       Validations.validate_textField(this.txt_LDtabase);
-       Validations.validate_textField(this.txt_LUsers);
-       Validations.validate_textField(this.txt_LPassword);
-
-       AppVars.XmappRootFolderURL=this.txt_xammRoot.getText();
-       AppVars.setDB_Url(this.txt_LHost.getText());
-       AppVars.setDbName(this.txt_LDtabase.getText());
-       AppVars.setDbUser(this.txt_LUsers.getText());
-       AppVars.setDbPass(this.txt_LPassword.getText());
     }
 
 }
