@@ -5,7 +5,11 @@
 package Utility;
 
 import Config.Notify;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import com.jfoenix.validation.RequiredFieldValidator;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 
 /**
  *
@@ -41,5 +45,32 @@ public class Validations {
                 return true;
             }
         }
+    }
+    
+    public static void RequiredTextValidaion(JFXTextField a,String msg){
+         RequiredFieldValidator validator=new RequiredFieldValidator();
+        a.getValidators().add(validator);
+        validator.setMessage(msg);
+        a.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+            if(!newValue){
+                a.validate();
+            }
+         });
+    }
+
+    /**
+     *
+     * @param a
+     * @param msg
+     */
+    public static void RequiredPasswordValidaion(JFXPasswordField a,String msg){
+         RequiredFieldValidator validator=new RequiredFieldValidator();
+        a.getValidators().add(validator);
+        validator.setMessage(msg);
+        a.focusedProperty().addListener((ObservableValue<? extends Boolean> observable, Boolean oldValue, Boolean newValue) -> {
+            if(!newValue){
+                a.validate();
+            }
+         });
     }
 }

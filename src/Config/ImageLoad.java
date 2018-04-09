@@ -12,6 +12,6 @@ import javafx.scene.image.Image;
  */
 public class ImageLoad {
         public static Image img_dir(String Image_Name) {
-        return new Image("/images/" + Image_Name);
+        return new Image("/Images/" + Image_Name);
     }
 }

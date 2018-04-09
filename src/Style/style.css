@@ -1,0 +1,16 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+.mainFxmlClass {
+
+}
+JFXButton{
+    -fx-cursor:hand;
+}
+.btn-login{
+    cursor: default;
+}
+.btn-login:hover{
+    -fx-background-color: #333333;
+}

@@ -23,11 +23,9 @@ public class Config {
      public void addFXML(AnchorPane PaneName,String fileName){
       PaneName.getChildren().clear();
         try {
-            PaneName.getChildren().add((Node) FXMLLoader.load(getClass().getResource("/View/"+fileName+".fxml")));
+            PaneName.getChildren().add((Node) FXMLLoader.load(getClass().getResource("/Views/"+fileName+".fxml")));
         } catch (IOException ex) {
-            ex.printStackTrace();
-           // Notify.toConsole(fileName+ ".fxml file can't be loaded!");
-           // Logger.getLogger(Config.class.getName()).log(Level.SEVERE, null, ex);
+           Notify.exceptionMessage(ex);
         }
     }
      
@@ -38,8 +36,21 @@ public class Config {
         boolean isConfigured=false;
         FindFile ff=new FindFile();
         if(ff.lookUpConfig()){
-            
-        }
+            if(Database.connect()!=null){
+                isConfigured=true;
+            }
+        }else isConfigured=false;
         return isConfigured;
+    }
+    public static void app_exit(){
+        if(Database.disconnect()==null){
+            if(Utility.MySqlControlPanel.isApacheActive()){
+                Utility.MySqlControlPanel.ApacheStop();
+            }
+            if(Utility.MySqlControlPanel.isMysqlActive()){
+               // Utility.MySqlControlPanel.MySqlStop();
+            }
+            System.exit(0);
+        }
     }
 }

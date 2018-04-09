@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="431.0" prefWidth="723.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.LoginController">
+    <stylesheets>
+        <URL value="@/Style/style.css" />
+    </stylesheets>
+   <children>
+      <HBox alignment="CENTER" prefHeight="75.0" prefWidth="734.0" style="-fx-background-color: #000000;">
+         <children>
+            <Label fx:id="lbl_company" text="Amar Circle" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="Calibri" size="64.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="20.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutY="75.0" prefHeight="60.0" prefWidth="734.0" style="-fx-background-color: #212121;">
+         <children>
+            <Label contentDisplay="CENTER" text="Login" textAlignment="CENTER" textFill="WHITE" HBox.hgrow="ALWAYS">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="Calibri" size="30.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <VBox alignment="CENTER" layoutX="-1.0" layoutY="148.0" prefHeight="283.0" prefWidth="734.0" spacing="50.0">
+         <children>
+            <JFXTextField fx:id="txt_username" labelFloat="true" promptText="Enter your username">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </JFXTextField>
+            <JFXPasswordField fx:id="txt_password" labelFloat="true" promptText="Enter your password">
+               <font>
+                  <Font name="Calibri" size="15.0" />
+               </font>
+            </JFXPasswordField>
+            <HBox spacing="41.0">
+               <children>
+                  <JFXButton alignment="CENTER" cancelButton="true" contentDisplay="CENTER" onAction="#btn_cancel" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: black;" styleClass="btn-login" stylesheets="@../Style/style.css" text="Cancel" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="19.0" />
+                     </font>
+                  </JFXButton>
+                  <JFXButton alignment="CENTER" contentDisplay="CENTER" defaultButton="true" onAction="#btn_login" prefHeight="36.0" prefWidth="146.0" style="-fx-background-color: black;" styleClass="btn-login" stylesheets="@../Style/style.css" text="Login" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="Calibri" size="19.0" />
+                     </font>
+                  </JFXButton>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets left="200.0" right="200.0" />
+         </padding></VBox>
+   </children>
+</AnchorPane>

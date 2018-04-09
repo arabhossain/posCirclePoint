@@ -48,7 +48,7 @@ public class Database {
     }
 
     // disconnect database
-    public void disconnect() {
+    public static Connection disconnect() {
         if (connection != null) {
             try {
                 connection.close();
@@ -57,6 +57,7 @@ public class Database {
                 Notify.exceptionMessage(e);
             }
         }
+        return connection;
     }
 
 }

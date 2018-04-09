@@ -66,7 +66,7 @@ public class Load extends Application {
     private void sceanLoad(Stage pstage) throws IOException {
         stage=pstage;
         if(Config.isConfigured()){
-            root = FXMLLoader.load(getClass().getResource("/View/"+url));
+            root = FXMLLoader.load(getClass().getResource("/Views/"+url));
             scene = new Scene(root);
             Config.setTitle(title);
             stage.setScene(scene);
